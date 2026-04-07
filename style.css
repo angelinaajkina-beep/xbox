@@ -1,205 +1,336 @@
-
-
-@font-face{
-    font-family: "HNL";
-    src: url(./font/HelveticaNeue-Roman.otf);
+/* style.css - все rem заменены на px, мобильная адаптация */
+@font-face {
+  font-family: "HNL";
+  src: url(./font/HelveticaNeue-Roman.otf);
 }
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "HNL";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "HNL", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
+
 :root {
   --font-family: "HelveticaNeue", sans-serif;
+  --green: #8dd83d;
+  --dark-bg: #373A3C;
+  --card-bg: #fff;
+  --text-dark: #435766;
 }
 
 .container {
-    max-width: 1800px;
-    padding: 10px 0;
-    margin: 0 auto;
+  max-width: 1800px;
+  padding: 10px 16px;
+  margin: 0 auto;
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #fff;
-    background: #464a4d;
-    overflow-x: hidden;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #fff;
+  background: #464a4d;
+  overflow-x: hidden;
 }
 
+/* ========== HEADER (мобильная адаптация) ========== */
 header {
-    background: #373A3C;
-    padding: 1rem 2rem;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 100;
+  background: #373A3C;
+  padding: 12px 16px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 100;
 }
 
 nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1400px;
-    margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
-.logo {
-    font-size: 2rem;
-    font-weight: bold;
-    color: #107c10;
+nav img {
+  height: 32px;
+  width: auto;
 }
 
 nav ul {
-    display: flex;
-    list-style: none;
-    gap: 2rem;
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  order: 2;
 }
 
-nav a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: 500;
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.search {
+  order: 1;
+  flex: 1;
+  min-width: 120px;
 }
 
 .search input {
-    background: #ffffff;
-    border: none;
-    padding: 0.5rem 1rem;
-    color: #fff;
+  background: #ffffff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  width: 100%;
+  color: #333;
 }
 
 .my-xbox {
-    background: #373A3C;
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
-    font-weight: 500;
+  background: #4a4e52;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-weight: 500;
+  font-size: 14px;
+  order: 3;
 }
+
+/* ========== HERO (мобильная оптимизация) ========== */
 .hero {
-    height: 640px;
-    background-image:url(/img/Star-Wars-Battlefront-II-combat.png);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    position: relative;
-    margin-top: 80px;
-    background-repeat: no-repeat;
-    background-size: cover;
+  height: 500px;
+  background-image: url(/img/Star-Wars-Battlefront-II-combat.png);
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  text-align: center;
+  margin-top: 70px;
+  padding: 0 20px 40px;
 }
 
 .hero-content h1 {
-font-family: var(--font-family);
-font-weight: 400;
-font-size: 36px;
-color: #fff;
-margin-bottom: 135px;
-margin-left: 831px;
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 28px;
+  color: #fff;
+  margin-bottom: 20px;
+  margin-left: 0;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.5);
 }
 
 .hero-buttons {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    margin-left: 831px;
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  margin-left: 0;
+  flex-wrap: wrap;
 }
 
 .hero-buttons button {
-font-family: var(--font-family);
-font-weight: 400;
-font-size: 16px;
-line-height: 131%;
-color: #fff;
-border-radius: 4px;
-width: 136px;
-height: 38px;
-background: #8dd83d;
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 14px;
+  color: #fff;
+  border-radius: 4px;
+  width: 130px;
+  height: 40px;
+  background: #8dd83d;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s;
 }
 
+.hero-buttons button:hover {
+  background: #7bc32e;
+}
+
+/* ========== VALUE SECTION ========== */
 .value-section {
-    max-width: 1400px;
-    margin: 4rem auto;
-    padding: 0 2rem;
+  max-width: 1400px;
+  margin: 48px auto;
+  padding: 0 16px;
 }
 
 .value-title {
-    text-align: center;
-    margin-bottom: 3rem;
-    
+  text-align: center;
+  margin-bottom: 32px;
 }
 
-.xbox-icon {
-    font-size: 3rem;
-    font-weight: bold;
-    color: #107c10;
-    margin-bottom: 1rem;
+.value-title img {
+  width: 48px;
+  margin-bottom: 12px;
 }
 
 .value-title h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    font-family: var(--font-family);
-font-weight: 400;
-font-size: 48px;
-color: #fff;
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 32px;
+  color: #fff;
+  line-height: 1.2;
 }
 
+/* Карточки — мобильная сетка */
 .cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 2rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
 }
 
 .card {
-    background: #fff;
-    border-radius: 10px;
-    padding: 2rem;
-    text-align: center;
-    height: 400px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    border: 1px solid #444;
+  background: var(--card-bg);
+  border-radius: 16px;
+  padding: 24px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: none;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
 }
 
 .card img {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 5px;
-    margin-bottom: 1rem;
-}
-
-.mixer-logo {
-    font-size: 3rem;
-    font-weight: bold;
-    margin-bottom: 1rem;
+  width: 100%;
+  height: 130px;
+  object-fit: contain;
+  margin-bottom: 16px;
 }
 
 .card h3 {
-font-family: var(--font-family);
-font-weight: 400;
-font-size: 18px;
-color: #435766;
-text-align: left;
-margin-bottom: 13px;
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 20px;
+  color: var(--text-dark);
+  text-align: left;
+  margin-bottom: 8px;
 }
 
 .card p {
-font-family: var(--font-family);
-font-weight: 400;
-font-size: 24px;
-color: #435766;
-text-align: left;
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 22px;
+  color: var(--text-dark);
+  text-align: left;
+  line-height: 1.3;
 }
 
 .card button {
-    background: #8dd83d;
-    color: white;
-    border: none;
-    padding: 1rem;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: 500;
-    margin-top: auto;
+  background: #8dd83d;
+  color: white;
+  border: none;
+  padding: 12px 16px;
+  border-radius: 40px;
+  cursor: pointer;
+  font-weight: 600;
+  margin-top: 20px;
+  width: 100%;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+.card button:hover {
+  background: #74b82e;
+}
+
+/* Секция exclusive — заглушка */
+.exclusive {
+  min-height: 200px;
+  margin: 32px 16px;
+  background: rgba(0,0,0,0.2);
+  border-radius: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ccc;
+  text-align: center;
+  padding: 32px;
+}
+
+/* ========== МОБИЛЬНЫЕ МЕДИА-ЗАПРОСЫ ========== */
+@media (min-width: 768px) {
+  .cards {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+  
+  .hero-content h1 {
+    font-size: 36px;
+    margin-bottom: 135px;
+    margin-left: 831px;
+  }
+  
+  .hero-buttons {
+    margin-left: 831px;
+  }
+  
+  .hero {
+    height: 640px;
+    align-items: center;
+    padding-bottom: 0;
+  }
+  
+  .value-title h2 {
+    font-size: 48px;
+  }
+  
+  .card button {
+    width: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  nav {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  nav ul {
+    justify-content: center;
+    order: 3;
+    gap: 16px;
+  }
+  
+  .search {
+    order: 2;
+  }
+  
+  .my-xbox {
+    text-align: center;
+    order: 4;
+    align-self: center;
+    width: fit-content;
+  }
+  
+  .hero {
+    height: 420px;
+    margin-top: 140px;
+  }
+  
+  .hero-content h1 {
+    font-size: 24px;
+    margin-bottom: 12px;
+  }
+  
+  .hero-buttons button {
+    width: 120px;
+    height: 38px;
+    font-size: 13px;
+  }
+  
+  .value-title h2 {
+    font-size: 26px;
+  }
+  
+  .card h3 {
+    font-size: 18px;
+  }
+  
+  .card p {
+    font-size: 18px;
+  }
 }
